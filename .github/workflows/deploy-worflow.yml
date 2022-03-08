@@ -1,8 +1,3 @@
-# This workflow should build the website with Hugo and deploy it on
-# GitHub pages. Edit this file as you wish, otherwise just make sure
-# that this folder contains a workflow exists that it is executed
-# upon pushing the source to the default branch.
-
 name: Build and deploy GitHub pages with Hugo
 
 on:
