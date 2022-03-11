@@ -7,5 +7,5 @@ I created this website to keep everything I learned from CTF challenges handy in
 I also thought it would be helpful for anyone who enjoys participating in CTF challenges and could use some advice here and there. So hopefully my Write Ups are as useful to you as they are to me. Happy Hacking!
 
 - [How I setup Kali Linux]({{< relref "../posts/general/howtosetupkali.md" >}})
-- [TryHackMe]({{< relref "../posts/tryhackme/tryhackme.md" >}})
-- [HackTheBox]({{< relref "../posts/hackthebox/hackthebox.md" >}})
+- [TryHackMe]({{< relref "../posts/tryhackme/tryhackme.md" >}}) (_Work in progress_)
+- [HackTheBox]({{< relref "../posts/hackthebox/hackthebox.md" >}}) (_Not yet started_)
