@@ -1,8 +1,11 @@
 ---
-title: "Test"
+title: "About this Website"
 weight: 1
 ---
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+I created this website to keep everything I learned from CTF challenges handy in one place. Creating Write Ups helps me to process all the tricks and ideas from CTF challenges and Penetration Tests and it is really nice to be able to refer back to them when in doubt.
+I also thought it would be helpful for anyone who enjoys participating in CTF challenges and could use some advice here and there. So hopefully my Write Ups are as useful to you as they are to me. Happy Hacking!
 
-- [Placeholder]({{< relref "../posts/placeholder.md" >}})
+- [How I setup Kali Linux]({{< relref "../posts/general/howtosetupkali.md" >}})
+- [TryHackMe]({{< relref "../posts/tryhackme/tryhackme.md" >}})
+- [HackTheBox]({{< relref "../posts/hackthebox/hackthebox.md" >}})
