@@ -35,7 +35,7 @@ This is everything I do in terms of VM configuration though you can tweak a lot 
 
 Now you can start the VM from within VirtualBox and after a few seconds you should be presented with Kali's login screen.
 
-Here is where we can input the default credentials _kali/kali_ given to us earlier to log into the machine.
+Here is where you can input the default credentials _kali/kali_ given to you earlier to log into the machine.
 
 Now this is where to real fun begins!
 
@@ -45,14 +45,19 @@ It is not really necessary but definitely good practice to replace the default u
 
 All of this can easily be done from the command line like this:
 
-1. Create the new user: `sudo adduser <new_username>`
-   1. Provide a password for the new user and leave all the other information empty.
-   2. This will automatically generate a new directory under _/home/_.
-2. Give the new user sudo privileges: `sudo usermod -a -G sudo <username>`
-3. Log out of Kali and login again as the new user.
-4. Delete the default user: `sudo userdel kali`.
-   1. It is possible that you may have to restart the VM before you are able to do that.
-5. You can now safely delete the _kali_ folder under _/home/kali_: `sudo rm -rd /home/kali`
+```bash
+sudo adduser <new_username> <-- Adds new user to system
+sudo usermod -a -G sudo <new_username> <-- Gives sudo privileges to the new user
+```
+
+Now you need to restart your Kali machine and this time you login as the new user. Once you are on your desktop open a terminal and execute the following commands:
+
+```bash
+sudo userdel kali <-- Removes the default user
+sudo rm -rd /home/kali <-- Removes the Kali user home directory
+```
+
+And there you go, the default user is gone.
 
 #### Step 5) Change keyboard layout
 
@@ -85,7 +90,7 @@ The `apt-updater` function is a quick and handy shortcut for keeping your Kali V
 
 You could obviously create a lot more shortcuts, for example some `nmap` aliases that cut down lengthy `nmap` commands, but if you are just starting out with CTF challenges and Penetration Testing I would advice against it. You should first become familiar with the commands themselves before setting up aliases that abstract important handles and configurations away.
 
-After you are done with the `.aliases` file we need to make sure that the aliases are loaded on shell start. For this add the following code to the end of the `.zshrc` (or `.bashrc` if you prefer bash) file in your user home directory:
+After you are done with the `.aliases` file you need to make sure that the aliases are loaded on shell start. For this add the following code to the end of the `.zshrc` (or `.bashrc` if you prefer bash) file in your user home directory:
 
 ```bash
 if [ -f ~/.aliases ]; then

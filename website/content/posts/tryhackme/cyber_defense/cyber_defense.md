@@ -28,7 +28,7 @@ _Not yet documented_
 
 #### Section 3: Security Operations & Monitoring
 
-_Not yet documented_
+- [Core Windows Processes]({{< relref "./Core_Windows_Processes.md" >}})
 
 #### Section 4: Threat Emulation
 
