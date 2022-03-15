@@ -5,7 +5,7 @@ date: 2022-03-09T19:25:58+01:00
 
 Taken from [TryHackMe](https://tryhackme.com/):
 
-_The Cyber Defense path aims to give a broad introduction to the different areas necessary to detect and respond to threats. This path will be looking at the following areas:_
+_The [Cyber Defense](https://tryhackme.com/path-action/blueteam/join) path aims to give a broad introduction to the different areas necessary to detect and respond to threats. This path will be looking at the following areas:_
 
     - Getting Started
     - Threat and Vulnerability Management
@@ -29,6 +29,7 @@ _Not yet documented_
 #### Section 3: Security Operations & Monitoring
 
 - [Core Windows Processes]({{< relref "./Core_Windows_Processes.md" >}})
+- [Sysinternals]({{< relref "./Sysinternals.md" >}})
 
 #### Section 4: Threat Emulation
 
