@@ -30,6 +30,7 @@ _Not yet documented_
 
 - [Core Windows Processes]({{< relref "./Core_Windows_Processes.md" >}})
 - [Sysinternals]({{< relref "./Sysinternals.md" >}})
+- [Windows Event Logs]({{< relref "./Windows_Event_logs.md" >}})
 
 #### Section 4: Threat Emulation
 
