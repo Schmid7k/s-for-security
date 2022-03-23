@@ -9,3 +9,4 @@ I also thought it would be helpful for anyone who enjoys participating in CTF ch
 - [How I setup Kali Linux]({{< relref "../posts/general/howtosetupkali.md" >}})
 - [TryHackMe]({{< relref "../posts/tryhackme/tryhackme.md" >}}) (_Work in progress_)
 - [HackTheBox]({{< relref "../posts/hackthebox/hackthebox.md" >}}) (_Not yet started_)
+- [Cyber Security Challenge Germany]({{< relref "../posts/cscg/cscg.md" >}})
