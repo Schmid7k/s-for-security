@@ -32,6 +32,7 @@ _Not yet documented_
 - [Sysinternals]({{< relref "./Sysinternals.md" >}})
 - [Windows Event Logs]({{< relref "./Windows_Event_logs.md" >}})
 - [Sysmon]({{< relref "./Sysmon.md" >}})
+- [Osquery]({{< relref "./Osquery.md" >}})
 
 #### Section 4: Threat Emulation
 
