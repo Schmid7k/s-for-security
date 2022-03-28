@@ -1,7 +1,9 @@
 baseURL = "https://schmid7k.github.io/s-for-security/"
 
 # This is a "one page"-website, so we do not need these kinds of pages...
-disableKinds = ["section", "taxonomy", "term", "RSS", "robotsTXT"]
+disableKinds = ["section", "taxonomy", "term", "RSS"]
+
+enableRobotsTXT = true
 
 defaultContentLanguage = "en"
 
@@ -12,30 +14,30 @@ theme = "hugo-scroll"
 title = "S for Security"
 
 [params]
-    # A "copyright"-line to be added at the bottom of the page.
-    # Hint: Markdown is supported in here as well. So you may e.g. add a link to your legal imprint-page.
-    copyright = "©Schmid7k"
+# A "copyright"-line to be added at the bottom of the page.
+# Hint: Markdown is supported in here as well. So you may e.g. add a link to your legal imprint-page.
+copyright = "©Schmid7k"
 
-    # The "description" of your website. This is used in the meta data of your generated html.
-    description = "Tips, tricks and write ups for Capture the Flag challenges."
+# The "description" of your website. This is used in the meta data of your generated html.
+description = "Tips, tricks and write ups for Capture the Flag challenges."
 
-    # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
-    favicon = "images/favicon.png"
+# The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
+favicon = "images/favicon.png"
 
-    # These "images" are used for the structured data templates. This will show up, when
-    # services like Twitter or Slack want to generate a preview of a link to your site.
-    # See https://gohugo.io/templates/internal#twitter-cards and
-    # https://gohugo.io/templates/internal#open-graph.
-    images = ["images/cover-image.jpg"]
+# These "images" are used for the structured data templates. This will show up, when
+# services like Twitter or Slack want to generate a preview of a link to your site.
+# See https://gohugo.io/templates/internal#twitter-cards and
+# https://gohugo.io/templates/internal#open-graph.
+images = ["images/cover-image.jpg"]
 
-    # Another "title" :-). This one is used as the site_name on the Hugo's internal
-    # opengraph structured data template.
-    # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
-    title = "S for Security"
+# Another "title" :-). This one is used as the site_name on the Hugo's internal
+# opengraph structured data template.
+# See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
+title = "S for Security"
 
-    # This theme will, by default, inject a design-by-line at the bottom of the page.
-    # You can turn it off, but we would really appreciate if you don’t :-)
-    # hidedesignbyline = true
+# This theme will, by default, inject a design-by-line at the bottom of the page.
+# You can turn it off, but we would really appreciate if you don’t :-)
+# hidedesignbyline = true
 
-    [params.meta]
-        keywords = "writeups, penetration-testing, cybersecurity, tryhackme, hackthebox"
+[params.meta]
+keywords = "writeups, penetration-testing, cybersecurity, tryhackme, hackthebox"

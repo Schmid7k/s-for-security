@@ -33,6 +33,7 @@ _Not yet documented_
 - [Windows Event Logs]({{< relref "./Windows_Event_logs.md" >}})
 - [Sysmon]({{< relref "./Sysmon.md" >}})
 - [Osquery]({{< relref "./Osquery.md" >}})
+- [Splunk 101]({{< relref "./Splunk_101.md" >}})
 
 #### Section 4: Threat Emulation
 
