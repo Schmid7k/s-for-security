@@ -34,6 +34,7 @@ _Not yet documented_
 - [Sysmon]({{< relref "./Sysmon.md" >}})
 - [Osquery]({{< relref "./Osquery.md" >}})
 - [Splunk 101]({{< relref "./Splunk_101.md" >}})
+- [Splunk 2]({{< relref "./Splunk_2.md" >}})
 
 #### Section 4: Threat Emulation
 
