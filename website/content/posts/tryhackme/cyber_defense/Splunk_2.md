@@ -93,5 +93,82 @@ The content of the email this is discussed in is encoded in base64, you need to 
 
 **Solution:** ambersthebest@yeastiebeastie.com
 
+#### Task 4: 200 series questions
+
+Time to look at the 200 series questions.
+
+**Question 1:**
+
+Identify the Tor version Amber installed.
+
+Try the keywords Amber and Tor in a query like this: `index="botsv2" amber tor`.
+
+This query returns over 300 results, try reversing the order of results in case the first event is the Tor installation or try to add another keyword to the query like this: `index="botsv2" amber tor version`.
+
+**Questions 2 & 3:**
+
+Now we need to determine the public IP address for brewertalk.com and the IP address performing a web vulnerability scan against it.
+
+For the public IP of brewertalk.com try `index="botsv2" sourcetype="stream:HTTP" brewertalk.com`.
+
+For the IP address that performed the web vulnerability scan against brewertalk.com try `index="botsv2" sourcetype="stream:HTTP" brewertalk.com`.
+
+**Questions 4 & 5:**
+
+Build a new search query with the attacker's IP as source IP and change event sampling to 1:100.
+
+Try `index="botsv2" src_ip="45.77.65.211"`.
+
+This query will give you over 18.000 results! Use Interesting Fields to find out which URI path is being attacked.
+
+Once you found the URI path construct a new query to search for the SQL function that was abused like this `index="botsv2" src_ip="ATTACKER_IP" uri_path="URI_PATH"`
+
+**Questions 6 & 7:**
+
+So far we identified Ambers Tor version and what URI path and SQL function is attacked on brewertalk.com.
+
+Now we have to identify the cookie value that was transmitted as part of an XSS attack performed by the user Kevin.
+
+Try getting some details on Kevin with this query `index="botsv2" kevin`.
+
+Now you should have Kevin's first and last name. Try figuring out the cookie value from the XSS attack.
+
+First you need to figure out Kevin's IP by searching for HTTP traffic with his name. Try `index="botsv2" sourcetype="stream:http" kevin`.
+
+With his IP you can narrow down the result further by looking for traffic to brewertalk.com `index="botsv2" sourcetype="stream:http" src_ip="71.39.18.125" brewertalk.com`.
+
+Looking at the cookie header of the results should give you the answer.
+
+Inside of the results you will also find the answer to the username that was created as part of the spear phishing attack.
+
+##### Question 10) What version of TOR Browser did Amber install to obfuscate her web browsing? Answer guidance: Numeric with one or more delimiter.
+
+**Solution:** 7.0.4
+
+##### Question 11) What is the public IPv4 address of the server running www.brewertalk.com?
+
+**Solution:** 52.42.208.228
+
+##### Question 12) Provide the IP address of the system used to run a web vulnerability scan against www.brewertalk.com.
+
+**Solution:** 45.77.65.211
+
+##### Question 13) The IP address from Q#2 is also being used by a likely different piece of software to attack a URI path. What is the URI path? Answer guidance: Include the leading forward slash in your answer. Do not include the query string or other parts of the URI. Answer example: /phpinfo.php
+
+**Solution:** /member.php
+
+##### Question 14) What SQL function is being abused on the URI path from the previous question?
+
+**Solution:** updatexml
+
+##### Question 15) What was the value of the cookie that Kevin's browser transmitted to the malicious URL as part of an XSS attack? Answer guidance: All digits. Not the cookie name or symbols like an equal sign.
+
+**Solution:** 1502408189
+
+##### Question 16) What brewertalk.com username was maliciously created by a spear phishing attack?
+
+**Solution:** kIagerfield
+
+
 
 
