@@ -38,7 +38,7 @@ _Not yet documented_
 
 #### Section 4: Threat Emulation
 
-_Not yet documented_
+- [Attacktive Directory]({{< relref "./Attacktive_Directory.md" >}})
 
 #### Section 5: Incident Response and Forensics
 

@@ -169,6 +169,137 @@ Inside of the results you will also find the answer to the username that was cre
 
 **Solution:** kIagerfield
 
+#### Task 5: 300 series questions
+
+Ok time to look at the 300 series questions.
+
+**Question 1 & 2:**
+
+This time we are looking into the individual named Mallory, her MacBook, and some encrypted files.
+
+Begin by searching for events associated with Mallory like this `index="botsv2" mallory`.
+
+This returns over 11,000 events but looking at Select Fields should give you the name of her MacBook.
+
+Use this information to find events related to this host and add common file extensions for PowerPoint, since we are looking for a PowerPoint presentation `index="botsv2" host="MACBOOK_NAME" (*.ppt OR *.pptx)`.
+
+The results should contain the name of the PowerPoint presentation before and after it was encrypted. The next thing to look out for is the movie file that was encrypted. By looking at the encrypted PowerPoint file you can find a sourcetype and an extension you can search for to find the other encrypted file like this `index="botsv2" host="MACBOOK_NAME" sourcetype="?" *.EXT`.
+
+**Question 3-7:**
+
+For the next task we need to provide the name of the manufacturer of the USB drive Kevin used on Mallory's personal MacBook (kutekitten).
+
+We begin with the MacBook `index="botsv2" kutekitten`.
+
+This should result in events from data sources that are related to Osquery. If you don't know Osquery yet I highly recommend doing the [Osquery](https://tryhackme.com/room/osqueryf8) room on TryHackMe first. I also have a write up for that [here]({{< relref "./Osquery.md" >}}).
+
+Back to the results, try looking for Mallory's user folders, it's a good place to start hunting for malware. Once you have it expand your query like this `index="botsv2" kutekitten "\\/PATH\\/MALLORY\\/FOLDER"`.
+
+Looking at the other available interesting fields related to paths can provide you with even better fields to include in your query and look for an interesting file, so make sure to pay attention to them.
+
+Once you found the file (check its hash in VirusTotal) pivot and look at the events 1 minute prior by clicking on the date/time of the event and selecting in what relation to the current event you want to see others.
+
+Search queries focused around that specific time segment will then allow you to find the event that was triggered when the USB was inserted. Though the events will not provide the name of the USB manufacturer directly, you have to perform external research on the ID value to get the answer.
+
+##### Question 17)  Mallory's critical PowerPoint presentation on her MacBook gets encrypted by ransomware on August 18. What is the name of this file after it was encrypted?
+
+**Solution:** Frothly_marketing_campaign_Q317.pptx.crypt
+
+##### Question 18) There is a Games of Thrones movie file that was encrypted as well. What season and episode is it? 
+
+**Solution:** S07E02
+
+##### Question 18) Kevin Lagerfield used a USB drive to move malware onto kutekitten, Mallory's personal MacBook. She ran the malware, which obfuscates itself during execution. Provide the vendor name of the USB drive Kevin likely used. Answer Guidance: Use time correlation to identify the USB drive.
+
+**Solution:** Alcor Micro Corp.
+
+##### Question 19) What programming language is at least part of the malware from the question above written in?
+
+**Solution:** Perl
+
+##### Question 20) When was this malware first seen in the wild? Answer Guidance: YYYY-MM-DD
+
+**Solution:** 2017-01-17
+
+##### Question 21) The malware infecting kutekitten uses dynamic DNS destinations to communicate with two C&C servers shortly after installation. What is the fully-qualified domain name (FQDN) of the first (alphabetically) of these destinations?
+
+**Solution:** eidk.duckdns.org
+
+##### Question 22) From the question above, what is the fully-qualified domain name (FQDN) of the second (alphabetically) contacted C&C server?
 
 
+**Solution:** eidk.hopto.org
 
+#### Task 6: 400 series questions
+
+Last but not least it's time to tackle the 400 series question from the BOTS2 dataset.
+
+**Questions 1 & 2:**
+
+Find the name of the attachment sent to Frothly by the malicious APT actor. The events are related to emails.
+
+Try this command and replace the ? and .EXT appropriately `index="botsv2" sourcetype="stream:?" *.EXT`
+
+**Question 3:**
+
+Remind yourself of the IP address that scanned brewertalk.com.
+
+Use that I and search the TCP stream for Interesting Fields `index="botsv2" sourcetype="stream:?" ATTACKER_IP`
+
+**Question 4:**
+
+An unusual file was downloaded with winsys32.dll. (Unusual as in unusual for an American company). Try `index="botsv2" winsys32.dll` to find out more.
+
+The results should give present a tool associated with transferring files from system to system. Also there is a source type associated with the binary which you can use for a new query `index="botsv2" sourcetype="stream:?"`.
+
+Since it was downloaded using winsys32.dll research commands that can be used with this tool to download things and add it to the query `index="botsv2" sourcetype="stream:?" method=COMMAND`.
+
+**Question 5 & 6:**:
+
+Given these sources you should be able to answer the questions by examining the execution of the malware.
+
+- https://www.hybrid-analysis.com/sample/d8834aaa5ad6d8ee5ae71e042aca5cab960e73a6827e45339620359633608cf1/598155a67ca3e1449f281ac4
+- https://www.virustotal.com/gui/file/d8834aaa5ad6d8ee5ae71e042aca5cab960e73a6827e45339620359633608cf1/detection
+- https://app.any.run/tasks/15d17cd6-0eb6-4f52-968d-0f897fd6c3b3
+
+**Question 7:**
+
+Begin with `index="botsv2" schtasks.exe` and built on top of that
+
+##### Question 23) A Federal law enforcement agency reports that Taedonggang often spear phishes its victims with zip files that have to be opened with a password. What is the name of the attachment sent to Frothly by a malicious Taedonggang actor?
+
+**Solution:** invoice.zip
+
+##### Question 24) What is the password to open the zip file?
+
+**Solution:** 912345678
+
+##### Question 25) The Taedonggang APT group encrypts most of their traffic with SSL. What is the "SSL Issuer" that they use for the majority of their traffic? Answer guidance: Copy the field exactly, including spaces.
+
+**Solution:** C = US
+
+##### Question 26) What unusual file (for an American company) does winsys32.dll cause to be downloaded into the Frothly environment?
+
+**Solution:** `나는_데이비드를_사랑한다.hwp`
+
+##### Question 27) What is the first and last name of the poor innocent sap who was implicated in the metadata of the file that executed PowerShell Empire on the first victim's workstation? Answer example: John Smith
+
+**Solution:** Ryan Kovar
+
+##### Question 28) Within the document, what kind of points is mentioned if you found the text?
+
+**Solution:** CyberEastEgg
+
+##### Question 29) To maintain persistence in the Frothly network, Taedonggang APT configured several Scheduled Tasks to beacon back to their C2 server. What single webpage is most contacted by these Scheduled Tasks? Answer example: index.php or images.html
+
+**Solution:** process.php
+
+#### Task 7: Conclusion
+
+Congratulations you finished the [Splunk 2](https://tryhackme.com/room/splunk2gcd5) room on [TryHackMe](https://tryhackme.com/).
+
+If you want to dive deeper into the art of hunting APTs with Splunk feel free to download the complete dataset into a local Splunk instance.
+
+##### Question 30)
+
+Click the `Completed` button to finish this room.
