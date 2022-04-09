@@ -39,6 +39,7 @@ _Not yet documented_
 #### Section 4: Threat Emulation
 
 - [Attacktive Directory]({{< relref "./Attacktive_Directory.md" >}})
+- [Attacking Kerberos]({{< relref "./Attacking_Kerberos.md" >}})
 
 #### Section 5: Incident Response and Forensics
 
